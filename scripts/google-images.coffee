@@ -27,6 +27,31 @@ module.exports = (robot) ->
       imageMe msg, imagery, false, true, (url) ->
         msg.send "#{mustachify}#{url}"
 
+  robot.respond /l(o+n+)gcat/i, (msg) ->
+    msg.send "https://cdn.shopify.com/s/files/1/0249/1421/products/longcat1_grande.jpg"
+    n = msg.match[1].length
+    setTimeout ->
+      for i in [1..n] by 2
+        msg.send "https://cdn.shopify.com/s/files/1/0249/1421/products/longcat2_grande.jpg"
+      setTimeout ->
+        msg.send "https://cdn.shopify.com/s/files/1/0249/1421/products/longcat3_grande.jpg"
+      , 500
+    , 500
+
+  robot.respond /l(o+n+)gburger/i, (msg) ->
+    msg.send "http://cdn.shopify.com/s/files/1/0204/5572/files/tumblr_lsi8p2gloz1qaqsoco1_500_2014-07-02_12-38-30_2014-07-02_12-38-46.jpg"
+    n = msg.match[1].length
+    setTimeout ->
+      for i in [1..n] by 2
+        msg.send "http://cdn.shopify.com/s/files/1/0204/5572/files/tumblr_lsi8p2gloz1qaqsoco1_500_2014-07-02_12-36-21_2014-07-02_12-37-35.jpg"
+        msg.send "http://cdn.shopify.com/s/files/1/0204/5572/files/tumblr_lsi8p2gloz1qaqsoco1_500_2014-07-02_12-35-49_2014-07-02_12-36-16.jpg"
+        msg.send "http://cdn.shopify.com/s/files/1/0204/5572/files/tumblr_lsi8p2gloz1qaqsoco1_500_2014-07-02_12-35-14_2014-07-02_12-35-44.jpg"
+        msg.send "http://cdn.shopify.com/s/files/1/0204/5572/files/tumblr_lsi8p2gloz1qaqsoco1_500_2014-07-02_12-34-09_2014-07-02_12-34-51.jpg"
+      setTimeout ->
+        msg.send "http://cdn.shopify.com/s/files/1/0204/5572/files/tumblr_lsi8p2gloz1qaqsoco1_500_2014-07-02_12-33-26_2014-07-02_12-33-43.jpg"
+      , 500
+    , 500
+
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
