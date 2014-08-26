@@ -5,11 +5,9 @@
 # xkcd <search> - XKCD comic matching the search
 module.exports = (robot) ->
   robot.respond /xkcd\s?(\d+)?$/i, (msg) ->
-    return if robot.onlywork msg
     xkcd(msg, msg.match[1])
 
   robot.respond /xkcd\s([^\s\d].+)/i, (msg) ->
-    return if robot.onlywork msg
     google msg, "site:xkcd.com #{msg.match[1]}", (url) ->
       if url and id = url.match(/xkcd.com\/(\d+)/)[1]
         xkcd(msg, id)
