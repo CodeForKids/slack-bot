@@ -27,6 +27,9 @@ module.exports = (robot) ->
       imageMe msg, imagery, false, true, (url) ->
         msg.send "#{mustachify}#{url}"
 
+  robot.respond /codeforkids/i, (msg) ->
+    msg.send "https://cdn.shopify.com/s/files/1/0223/1913/files/logo_blacktext_highres.png?27912"
+
   robot.respond /l(o+n+)gcat/i, (msg) ->
     msg.send "https://cdn.shopify.com/s/files/1/0249/1421/products/longcat1_grande.jpg"
     n = msg.match[1].length
