@@ -6,6 +6,9 @@
 #   hubot animate me <query> - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
 #   hubot mustache me <url> - Adds a mustache to the specified URL.
 #   hubot mustache me <query> - Searches Google Images for the specified query and mustaches it.
+#   hubot l(o*n)ngcat - Gives you a longcat with n pieces of body
+#   hubot l(o*n)burger - Gives you a longburger with n pieces of meat
+#   hubot codeforkids - Gives you Code For Kids!
 
 module.exports = (robot) ->
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
